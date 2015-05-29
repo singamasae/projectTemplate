@@ -18,6 +18,7 @@ Java RESTful Web Service Application with XML Response
 ## Tools ##
 * IDE : Eclipse or Spring Tool Suite
 * Application Server : Tomcat 7
+* Automated Test : JUnit
 
 ## Build and Run ##
 1. Setup MySQL Database
