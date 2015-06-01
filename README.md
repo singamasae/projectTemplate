@@ -31,5 +31,6 @@ Java RESTful Web Service Application with JSON & XML Response
     * password : 
 
 2. Run application (simply use maven project import tool in eclipse/STS)
-3. JSON response : Browse http://localhost:8080/projectTemplate/getUser.api?&userName=yourName&format=json
-	XML response : Browse http://localhost:8080/projectTemplate/getUser.api?&userName=yourName&format=xml
+3. 
+	* JSON response : Browse http://localhost:8080/projectTemplate/getUser.api?&userName=yourName&format=json
+	* XML response : Browse http://localhost:8080/projectTemplate/getUser.api?&userName=yourName&format=xml
