@@ -14,7 +14,6 @@ public class UserServicesImpl implements UserServices {
 	@Autowired
 	private UserDao userDao;
 
-	@Override
 	public User findByUserName(String userName) {
 		// TODO Auto-generated method stub
 		return userDao.findByUserName(userName);

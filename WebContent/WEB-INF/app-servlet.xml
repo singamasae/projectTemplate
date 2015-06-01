@@ -12,9 +12,26 @@
 	<!-- <context:property-placeholder location="classpath:jdbc.properties" /> -->
 
 	<context:component-scan base-package="com.project.template.controller" />
+	<mvc:default-servlet-handler />
+	<mvc:annotation-driven content-negotiation-manager="contentNegotiationManager" />
 
-	<mvc:annotation-driven />
-	<mvc:default-servlet-handler/>
+	<bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+		<property name="favorPathExtension" value="false" />
+		<property name="favorParameter" value="true" />
+		<property name="parameterName" value="format" />
+		<property name="defaultContentType" value="application/json" />
+		<property name="mediaTypes">
+			<map>
+				<entry key="json" value="application/json" />
+				<entry key="xml" value="application/xml" />
+			</map>
+		</property>
+
+		<property name="ignoreAcceptHeader" value="true" />
+		<property name="useJaf" value="false" />
+	</bean>
+
+
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 
 </beans>

@@ -3,6 +3,7 @@ package com.project.template.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +24,8 @@ public class UserController {
 
 	private static Logger log = LoggerFactory.getLogger(UserController.class);
 
-	@RequestMapping(value = "/getUser.api", params = { "userName" }, method = RequestMethod.GET)
+	@RequestMapping(value = "/getUser.api", params = { "userName" }, method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE,
+			MediaType.APPLICATION_XML_VALUE })
 	public @ResponseBody Result login(@RequestParam(value = "userName") String userName) throws Exception {
 		Result andaraLink = new Result();
 		Response response = new Response();

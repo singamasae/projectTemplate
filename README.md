@@ -1,5 +1,5 @@
 # projectTemplate #
-Java RESTful Web Service Application with XML Response 
+Java RESTful Web Service Application with JSON & XML Response 
 
 ## Development Stack ##
 * Maven
@@ -10,10 +10,13 @@ Java RESTful Web Service Application with XML Response
 * JUnit 4.11
 * MySQL 5.x
 * JAXB
+* JSON jackson-mapper-asl 1.9.13
 
 ## Configuration ##
 1. Database configuration : \src\main\resources\jdbc.properties
 2. Log configuration : \src\main\resources\logback.xml
+3. Application context : \src\main\resources\applicationContext.xml
+4. Spring MVC dispatcher servlet : \WebContent\WEB-INF\app-servlet.xml
 
 ## Tools ##
 * IDE : Eclipse or Spring Tool Suite
@@ -27,5 +30,6 @@ Java RESTful Web Service Application with XML Response
     * username : root 
     * password : 
 
-2. Run application
-3. Browse http://localhost:8080/projectTemplate/getUser.api?userName=userName
+2. Run application (simply use maven project import tool in eclipse/STS)
+3. JSON response : Browse http://localhost:8080/projectTemplate/getUser.api?&userName=yourName&format=json
+	XML response : Browse http://localhost:8080/projectTemplate/getUser.api?&userName=yourName&format=xml
