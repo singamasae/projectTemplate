@@ -34,3 +34,5 @@ Java RESTful Web Service Application with JSON & XML Response
 3. 
 	* JSON response : Browse http://localhost:8080/projectTemplate/getUser.api?&userName=yourName&format=json
 	* XML response : Browse http://localhost:8080/projectTemplate/getUser.api?&userName=yourName&format=xml
+	
+4. Demo version, please visit http://projecttemplate-projectlatte.rhcloud.com
