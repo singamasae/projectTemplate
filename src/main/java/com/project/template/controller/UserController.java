@@ -27,7 +27,7 @@ public class UserController {
 	@RequestMapping(value = "/getUser.api", params = { "userName" }, method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE })
 	public @ResponseBody Result login(@RequestParam(value = "userName") String userName) throws Exception {
-		Result andaraLink = new Result();
+		Result result = new Result();
 		Response response = new Response();
 
 		User user = userServices.findByUserName(userName.trim());
@@ -35,28 +35,28 @@ public class UserController {
 		if (user == null) {
 			response.setCode(APPConst.RESPONSE_ERROR);
 			response.setDescription("user is not registered");
-			andaraLink.setResponse(response);
-			return andaraLink;
+			result.setResponse(response);
+			return result;
 		}
 
 		response.setCode(APPConst.RESPONSE_SUCCESS);
 		response.setDescription("user: " + user.getUserName() + " is registered");
 
-		andaraLink.setResponse(response);
-		return andaraLink;
+		result.setResponse(response);
+		return result;
 	}
 
 	@ExceptionHandler(Exception.class)
 	public @ResponseBody Result errorHandle(Exception e) {
-		Result andaraLink = new Result();
+		Result result = new Result();
 
 		Response response = new Response();
 		response.setCode(APPConst.RESPONSE_ERROR);
 		response.setDescription(e.getMessage());
 
-		andaraLink.setResponse(response);
+		result.setResponse(response);
 
 		log.error(e.getMessage(), e);
-		return andaraLink;
+		return result;
 	}
 }
